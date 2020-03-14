@@ -1,3 +1,10 @@
 <footer>
-  &copy; {{ .Site.Params.author }}
+  <span>&copy; {{ .Site.Params.author }}</span>
+  <nav class="footer-nav">
+    <ul>
+      {{ range .Site.Menus.footer }}
+        <li><a class="footer-nav__menuItem footer-nav__menuItem--{{ lower .Name }}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
 </footer>

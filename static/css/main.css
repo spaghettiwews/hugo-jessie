@@ -155,6 +155,14 @@ hr {
 
 footer {
   color: #dfdfdf;
+  display: flex;
   font-size: 70%;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
+}
+
+footer nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
