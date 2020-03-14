@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+    <h1>Writing</h1>
+        <h2>Featured</h2>
+        {{ range .Paginator.Pages }}
+            {{ if eq .Params.Featured true }}
+                <article class="featured">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Params.Subtitle }}</p>
+                </article>
+            {{ end }}
+        {{ end }}
+        <hr/>
+        {{ $previousYear := 0 }}
+        {{ range .Paginator.Pages }}
+            {{ if eq .Params.Featured false }}
+                {{ $currentYear := .Date.Format "2006" }}
+                <article 
+                {{ if ne $previousYear $currentYear }}
+                    data-year={{ $currentYear }}
+                {{ end }}>
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    {{ partial "timestamp" . }}
+                    <p>{{ .Params.Subtitle }}</p>
+                </article>
+                {{ $previousYear = $currentYear }}
+            {{ end }}
+        {{ end }}
+{{ end }}

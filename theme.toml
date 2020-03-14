@@ -1,0 +1,17 @@
+name = "Hugo Jessie"
+license = "MIT"
+licenselink = "https://github.com/spaghettiwews/hugo-jessie/blob/master/LICENSE.md"
+description = "This theme is based on the lovely, minimalist design of Jessie Frazelle's personal blog [https://blog.jessfraz.com/](https://blog.jessfraz.com/)"
+homepage = "#"
+tags = ["clean", "minimalist"]
+features = ["single column"]
+min_version = "0.64"
+
+[author]
+  name = "spaghettiwews"
+  homepage = "https://wews.co"
+
+[original]
+  name = "Jessie Frazelle personal blog"
+  homepage = "https://blog.jessfraz.com/"
+  repo = "https://github.com/jessfraz/blog"

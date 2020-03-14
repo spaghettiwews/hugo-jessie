@@ -1,0 +1,15 @@
+<header>
+  <a href="/" id="logo" aria-label={{ .Site.Title }}>{{ .Site.Title }}</a>
+  <nav>
+    <ul class="main-nav">
+        {{ range .Site.Menus.main }}
+            <li><a class="main-nav__menuItem main-nav__menuItem--{{ lower .Name }}" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a></li>
+        {{ end }} 
+    </ul>
+    <ul class="social-nav">
+        {{ range .Site.Menus.social }}
+            <li><a class="social-nav__menuItem social-nav__menuItem--{{ lower .Name }}" href="{{ .URL }}" title="{{ .Name }}">{{ readFile .Pre | safeHTML }}{{ .Name }}</a></li>
+        {{ end }} 
+    </ul>
+  </nav>
+</header>

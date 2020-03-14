@@ -1,0 +1,7 @@
+{{ define "main" }} 
+    <main id="content">
+        <h1>{{ .Title }}</h1>
+        {{ partial "timestamp" . }}
+        {{ .Content }}
+    </main>
+{{ end }}
