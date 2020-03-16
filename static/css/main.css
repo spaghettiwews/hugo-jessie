@@ -23,7 +23,9 @@
 :root {
   --dark-bg: #282c35;
   --dark-text-color: #ffffffbd;
-  --dark-time-color: #ffffff;
+  --dark-hr-color: #575a61;
+  --dark-time-color: #ffffffc2;
+  --dark-shadow-color: rgba(28, 28, 28, 0.75);
 }
 
 * {
@@ -102,8 +104,10 @@ article p {
 
 header,
 header nav,
-header nav ul {
+header nav ul,
+header .theme-toggle {
   display: flex;
+  align-items: center;
 }
 
 header {
@@ -118,14 +122,14 @@ header {
 }
 
 header nav ul {
-  align-items: center;
   line-height: 1;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-header nav ul li {
+header nav ul li,
+.theme-toggle {
   margin: 0 0.8rem;
 }
 
@@ -133,7 +137,7 @@ header nav ul + ul {
   margin-left: 1rem;
 }
 
-.social-nav > li:last-child {
+.theme-toggle {
   margin-right: 0;
 }
 
@@ -165,4 +169,76 @@ footer nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.theme-toggle {
+  background-color: #0f1114;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 0;
+  opacity: 0;
+  padding: 4px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.theme-toggle.visible {
+  opacity: 1;
+}
+
+.theme-toggle > img + img {
+  margin-left: 0.5rem;
+}
+
+.theme-toggle::before {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #999;
+  content: "";
+  height: 16px;
+  position: absolute;
+  transition: all 0.2s ease;
+  width: 16px;
+}
+
+body.dark .theme-toggle::before {
+  transform: translateX(calc(100% + 0.5rem));
+}
+
+@media (prefers-color-scheme: dark) {
+  body,
+  header {
+    background-color: var(--dark-bg);
+    color: var(--dark-text-color);
+  }
+
+  header {
+    box-shadow: 0 0 10px var(--dark-shadow-color);
+  }
+
+  time {
+    color: var(--dark-time-color);
+  }
+
+  hr {
+    border-color: var(--dark-hr-color);
+  }
+}
+
+body.dark,
+body.dark header {
+  background-color: var(--dark-bg);
+  color: var(--dark-text-color);
+}
+
+body.dark header {
+  box-shadow: 0 0 10px var(--dark-shadow-color);
+}
+
+body.dark time {
+  color: var(--dark-time-color);
+}
+
+body.dark hr {
+  border-color: var(--dark-hr-color);
 }
