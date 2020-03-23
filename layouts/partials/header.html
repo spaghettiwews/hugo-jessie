@@ -11,5 +11,7 @@
             <li><a class="social-nav__menuItem social-nav__menuItem--{{ lower .Name }}" href="{{ .URL }}" title="{{ .Name }}">{{ readFile .Pre | safeHTML }}{{ .Name }}</a></li>
         {{ end }} 
     </ul>
+  {{ partial "theme-toggle" }}
   </nav>
 </header>
+ 
