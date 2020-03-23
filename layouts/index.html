@@ -2,7 +2,7 @@
 
     <h1>Writing</h1>
         <h2>Featured</h2>
-        {{ range .Paginator.Pages }}
+        {{ range .Site.Pages.ByDate.Reverse }}
             {{ if eq .Params.Featured true }}
                 <article class="featured">
                     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
