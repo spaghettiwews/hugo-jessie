@@ -3,5 +3,6 @@
         <h1>{{ .Title }}</h1>
         {{ partial "timestamp" . }}
         {{ .Content }}
+        {{ partial "lastupdated" . }}
     </main>
 {{ end }}
