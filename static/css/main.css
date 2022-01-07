@@ -154,6 +154,8 @@ header nav ul + ul {
 .highlight pre {
   overflow-x: scroll;
   padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 hr {
@@ -259,4 +261,21 @@ body.dark time {
 
 body.dark hr {
   border-color: var(--dark-hr-color);
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 2px dotted gainsboro;
+}
+
+figcaption {
+  font-size: 15px;
+  font-style: italic;
+}
+
+figcaption > p {
+  margin-bottom: 0;
 }
